@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import SectionCard from "../../components/card/section-card";
+import SectionCard from "../../components/card/Section-card";
 import Nav from "../../components/nav/Nav";
 import { fetchMylist } from "../../db/Hasura";
 import { getSyncVideos } from "../../lib/videos";
