@@ -27,18 +27,10 @@ export async function getServerSideProps(context) {
   // const travelVideos = await getVideos("travel");
   // const productivityVideos = await getVideos("productivity");
   // const popularVideos = await getPopularVideos();
-  const disneyVideos = process.env.DEVELOPMENT
-    ? getSyncVideos("disney trailure")
-    : await getVideos("disney trailure");
-  const travelVideos = process.env.DEVELOPMENT
-    ? getSyncVideos("travel")
-    : await getVideos("travel");
-  const productivityVideos = process.env.DEVELOPMENT
-    ? getSyncVideos("productivity")
-    : await getVideos("productivity");
-  const popularVideos = process.env.DEVELOPMENT
-    ? getSyncVideos("disney trailure")
-    : await getPopularVideos();
+  const disneyVideos = await getVideos("disney trailure");
+  const travelVideos = await getVideos("travel");
+  const productivityVideos = await getVideos("productivity");
+  const popularVideos = await getPopularVideos();
   const fetchWatchedVideos = await getWatchedVideos(userId, token);
   const watchedVideos = fetchWatchedVideos.map((video) => ({
     id: video.videoId,
@@ -63,7 +55,6 @@ export default function Home({
   popularVideos,
   watchedVideos,
 }) {
-  console.log(watchedVideos, "wv");
   return (
     <div className={styles.container}>
       <Head>

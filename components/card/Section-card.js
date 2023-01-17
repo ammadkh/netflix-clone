@@ -16,7 +16,7 @@ export default function SectionCard({
       <div className={`${classes.cardWrapper} ${shouldWrap && classes.wrap}`}>
         {videos.map((video, index) => {
           return (
-            <Link key={video.id} href={`video/${video.id}`}>
+            <Link key={video.id} href={`video/${video?.id}`}>
               <Card size={size} cardId={index} imageUrl={video.imgUrl} />
             </Link>
           );
